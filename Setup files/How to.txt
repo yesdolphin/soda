@@ -1,0 +1,198 @@
+The setup:
+1. Put in USB / Download. The folder soda should be located inside ~/Downloads.
+2. Move things to the right folders (CS1 and CS10 files to inside ~/Library/Services)
+3. Adjust system Prefrences ( Change the CS10 file to Control Shift 0, Change the take an area of the screen hotkey to Control Shift Option 4 )
+4. Go to the terminal ( Type python ~/Downloads/soda/py2_file.py, Press Control Shift 0 to use the menulet after the setup. )
+5. Wait until downloads are finished
+
+
+1. Go to the Excel file "setup workbook.xlsx" and then data -> filter, filter to FILL IN DETAILS. Fill in those details. These are the details for your desired store.
+
+Then, follow these steps:
+
+1. GET_GMAIL_ACCOUNT
+Go to https://accounts.google.com/signup/v2/webcreateaccount?continue=https%3A%2F%2Fwww.google.com%2Fsearch%3Fq%3Dgmail%2Baccount%2Bget%26oq%3Dgmail%2Baccount%2Bget%26aqs%3Dchrome..69i57.2382j0j1%26sourceid%3Dchrome%26ie%3DUTF-8&hl=en&dsh=S973193798%3A1577032492761351&gmb=exp&biz=false&flowName=GlifWebSignIn&flowEntry=SignUp
+Enter in details, click next, enter in your phone number, click next, check verification code, enter in verification code, click verify, enter in the birthdate and gender, skip for the get more from your number, scroll down the privacy and terms, click I agree.
+
+
+2. GET_SHOPIFY_STORE
+Shopify.com, click start a trial, enter in details, click Create your store, enter in details for this page, click next, enter in your business info in this page, click Enter my store.
+Here, copy your Administrative URL to the Excel file. It should be in the format https://-SHOP NAME-.myshopify.com/admin
+Go to https://_Your Store URL_/admin/pages/new, add the Return policy. You can find the text in the Excel file.
+Go to https://_Your Store URL_/admin/pages/new, add the Privacy policy. You can find the text in the Excel file.
+Go to https://_Your Store URL_/admin/pages/new, add the Terms of service. You can find the text in the Excel file.
+Go to https://_Your Store URL_/admin/pages/new, add the DMCA policy. You can find the text in the Excel file.
+Refer to the Excel sheet for the rows that have the .myshopify.com domain url. These are links in your store. The column next to that will list details that you have to enter for each of those links.
+Go to https://_Your Store URL_/admin/settings/domains/buy, click buy new domain, search the domain name, click buy, enter in your credit card info, and click Confirm. Uncheck auto-renew if desired. Then click Buy domain.
+Go to https://_Your Store URL_/admin/settings/domains. Click your domain, click DNS settings, delete the row under MX Record, and add the 5 following MX Records.
+Name/Host/Alias Time to Live (TTL*) Record Type Priority  Value/Answer/Destination
+Blank or @  3600  MX  1 ASPMX.L.GOOGLE.COM.
+Blank or @  3600  MX  5 ALT1.ASPMX.L.GOOGLE.COM.
+Blank or @  3600  MX  5 ALT2.ASPMX.L.GOOGLE.COM.
+Blank or @  3600  MX  10  ALT3.ASPMX.L.GOOGLE.COM.
+Blank or @  3600  MX  10  ALT4.ASPMX.L.GOOGLE.COM.
+Go to https://_Your Store URL_/admin/apps/private/new, Click Review disabled Admin API permissions
+Change the following permissions:
+Store content like articles, blogs, comments, pages, and redirects: write
+Customer details and customer groups: write
+Fulfillment services: write
+Inventory: write
+Locations: read
+Orders, transactions and fulfillments: write
+Product information: write
+Products, variants and collections: write
+Resource feedback: write
+Shipping rates, countries and provinces: write
+Theme templates and theme assets: write
+Click save, click I understand, create the app, and then copy the three credentials to the Excel file which are Shopify_App_API_Key, Shopify_App_API_Password, and Shopify_App_API_Secret.
+
+
+3. GET_GSUITE_ACCOUNT
+Go to https://gsuite.google.com/signup/basic/welcome, enter in details, click next, enter in contact info, click next, this prompt asks if you have a domain name, click yes I have one I can use, enter in the domain name, click next, click next again, enter in support as your username, it's your support email, enter in your password, fill out the captcha, and click agree and continue
+Go to https://gsuite.google.com/, click sign in, enter in your domain name, click go, enter in your email, click next, enter in your password, click next, this prompt if it shows up is for phone number verification, enter in your phone number, click get code, enter in your verification code, click verify, then it will show you a dialog about your new account. Click accept here, click flexible plan, enter in your details there and payment method, click next, it will say your google account has been created, click continue to setup.
+Click start, check I added all user email addresses, click next, click choose a different method, click add meta tag. Here, go to the Terminal and type python "/Users/$USER/tavern/tavern/soda/Setup files/setup.py part1".
+Then check I added the meta tag to my homepage. Click verify domain and setup email. Click next, click continue to admin console.
+Go to https://admin.google.com/AdminHome?hl=en#DomainSettings/subtab=subscriptions, click actions, click downgrade to G Suite Basic (optional), click downgrade, click continue, click continue again, 
+
+
+4. GET_GOOGLE_API_PROJECT
+Go to https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin, log in with your personal email.
+Go to https://console.cloud.google.com/apis/library?pli=1, check I agree, click agree and continue.
+Go to https://console.cloud.google.com/projectcreate, click create.
+Go to https://console.cloud.google.com/apis/credentials/consent?project=, enter in GSuite Project for the application name, click save.
+Go to https://console.cloud.google.com/apis/credentials?project=, click Create credentials, check other, click Create, click OK, click the download button with the arrow.
+Go to https://console.cloud.google.com/apis/library/gmail.googleapis.com, click Enable
+Go to https://console.cloud.google.com/apis/library/drive.googleapis.com, click Enable
+Go to the Terminal and type python "/Users/$USER/tavern/tavern/soda/Setup files/setup.py part2". It will open a browser window. Log in, and then click Allow permissions. Click allow again. Then, it will open another browser window. Click allow and allow again hear.
+
+
+5. GET_GOOGLE_API_PROJECT(1)
+Go to https://gsuite.google.com/, click sign in, enter in your domain name, and log in with the support email.
+Go to https://console.cloud.google.com/apis/library?pli=1, check I agree, click agree and continue.
+Go to https://console.cloud.google.com/projectcreate, click create.
+Go to https://console.cloud.google.com/apis/credentials/consent?project=, enter in GSuite Project for the application name, click save.
+Go to https://console.cloud.google.com/apis/credentials?project=, click Create credentials, check other, click Create, click OK, click the download button with the arrow.
+Go to https://console.cloud.google.com/apis/library/gmail.googleapis.com, click Enable
+Go to https://console.cloud.google.com/apis/library/drive.googleapis.com, click Enable
+Go to the Terminal and type python "/Users/$USER/tavern/tavern/soda/Setup files/setup.py part3". It will open a browser window and ask for the allow permissions. Click allow and allow. It will then open another browser window. Click allow and allow.
+
+
+6. GET_FACEBOOK_BUSINESS_MANAGER_ACCOUNT
+Go to https://facebook.com, create or log in with your Facebook account.
+Go to https://business.facebook.com, click create account, enter in your name, click next, enter in your details, click submit, click done, and then click the confirmation link in your email.
+
+
+7. GET_FACEBOOK_AD_ACCOUNT
+Go to https://facebook.com, log in, 
+Go to https://business.facebook.com/settings/ad-accounts, click add, click add an ad account, enter in the business name as the account name, click next, this prompt asks who this ad account will be used for, click my business, click create.
+There is an ID field on this page. Copy the Facebook_Business_Ad_Account_ID to the Excel file, then click Add People. Click assign, click done.
+Go to https://www.facebook.com/ads/manager/billing, click add payment method, enter in the details, click confirm.
+
+
+8. GET_FACEBOOK_PIXEL
+Go to https://facebook.com, log in, 
+Go to https://business.facebook.com/settings/pixels, click create a pixel, click create, click the x button.
+There is a field saying Pixel ID: --ID--. Copy the Facebook Pixel ID to the Excel file.
+
+
+9. GET_FACEBOOK_DEVELOPER_ACCOUNT
+Go to https://facebook.com, log in, 
+Go to https://developers.facebook.com, click Get Started, click next, enter in the details, click next, fill out the captcha if any
+
+
+10. GET_FACEBOOK_MARKETING_APP
+Go to https://facebook.com, log in
+Go to https://developers.facebook.com/apps, click create a new app, click create app id, fill out the captcha if any. On this page, copy the Facebook_Business_App_ID on the page to the Excel file. In the lower left hand side, click Products, click Marketing API,
+Go to https://developers.facebook.com/apps/--YOUR_APP_ID--/settings/basic/?business_id=1552147965081345
+Go to the Terminal and run "/Users/$USER/tavern/tavern/soda/Setup files/setup.py privacy_policy". Enter in the privacy policy url that it gives you in the browser, click save changes.
+Go to https://developers.facebook.com/tools/explorer, click get token, check ads_management, ads_read, manage_pages, and read_insights, click get user access token, click get token, copy the token.
+Save the access token to the Excel file
+Go to https://developers.facebook.com/tools/debug/accesstoken, paste the access token there, click debug, click extend access token, enter in your password, click debug again. It'll open a new page, copy the Facebook_Business_App_Token on that page to the Excel file.
+Go to https://developers.facebook.com/apps/--YOUR_APP_ID--/settings/basic, click the button next to Status: In Development, enter in business and pages for the option, and click confirm. 
+Click Show next to App Secret and then copy the Facebook_Business_App_Secret to the Excel file.
+
+
+11. ALWAYS_FOR_INPUT_SHOPIFY_PIXEL
+Go to https://_Your Store URL_/admin, login.
+Go to https://_Your Store URL_/admin/online_store/preferences, enter in your Facebook Pixel ID, click save.
+Click the verify email link in your personal email to verify your Shopify store.
+Click the verify domain link in your personal email and then click Verify Information.
+
+
+12. GET_ALIEXPESS_ACCOUNT
+Go to https://aliexpress.com, click join, enter in username and password, and click create account.
+Click the verify link in your personal email to verify your account.
+
+
+13. GET_ALIPAY_ACCOUNT
+Go to https://login.aliexpress.com/?return_url=https://login.aliexpress.com/ipay_login.htm, log in, click send confirmation email, click the confirmation email in your personal email, on that page, answer the 3 security questions, click submit.
+Go to https://intl.alipay.com/ihome/user/queryUserBindCard.htm, click add cards, enter in details, click save the card.
+
+
+Go to the Terminal and type python "/Users/$USER/tavern/tavern/soda/Setup files/setup.py final". There are two more tutorials below on how to use the menulet and how to add products.
+
+
+
+
+* At this point the downloads should be finished and the store setup is done. Here is how to use the menulet that opens when you press Command + Shift + 0
+General menulet tutorial: 
+In the menulet, there are two main rows.
+Row 1:
+  Settings:
+    Store Abbreviation - the current store to add products to.
+    Niche - the current niche to add products to. You can create new niches here by clicking the + button.
+    Page - the current Facebook page to create advertisements on. You can refresh the page list by clicking the / button
+  Main:
+    Routing - The transit times for your orders, split into Ready To Order, Placed Order, Tracking And Shipping, and Delivered.
+    Support - The support menu.
+    Product Talk - The product review menu.
+    Product Inceptions - The menu for refreshing unavailable products.
+    Order Unpender - Start the Order Unpender to fulfill new orders
+
+
+
+Here is how to add products. The rest of the menulet is managing products after added and managing orders.
+Adding items tutorial:
+The following is the format that should be copied to the clipboard:
+twirl1: title|picked variant: omit/#|options: omit/# list|image gallery: omit/image numbers|variants: omit/# list|size chart: omit/size chart|description: omit/description|
+twirl1: A|B|C|D|E|F|G|
+A. title
+B. picked variant: omit/#
+C. image gallery: omit/image numbers
+D. options: omit/# list
+E. variants: omit/# list
+F. size chart: omit/size chart
+G. description: omit/description
+
+1. title: pick any title, it will capitalize every word automatically
+What is ships from? If you look at this screenshot, you'll see the option list that's Ships From. This option won't add on your store. It will default to China, the least expensive option usually.
+What is a designated variant list? It's any option choice list that is not "Ships From" or with the name containing "Size"
+2. picked variant: omit so empty, or a number. it will be omitted if there is no designated variant list or if there is a designated variant list, you must choose a number, this will be the number for ads.
+3. image gallery: omit so empty, or a list of numbers such as 1,2,3,4,5,6 or 1,2,3,4 or if you want to change the order, 4,3,2,1. you can also do 1,2,4 or 4,2,1 if you want to not add picure #3.
+4. option list: omit so empty, because there are no options, or it's the list of options with the # list format. so say you have ring size and main stone color, you can choose 2:Color,1:Size.
+5. variant list: omit so empty, because there is no designated variant list, or it's the variants with the # list format. so here, you can do: 1:Gold,2:Silver,3:Black
+6. size chart: if there's a size chart, you can add it. The format is as follows: bust,shoulder,sleeve&M:96,42,61&L:100,43,62&XL:41,44,63&2XL:108,45,64&cm
+7. description: the description of your product. use \n to skip a line. For example: This is a great product\nGet it exclusively online
+
+- Examples -
+
+Look at the picture for Ring 1
+twirl1: A|B|C|D|E|F|G| -> twirl1: Men's Ring|1|1,2,3,4,5|2:Color,1:Size|1:Gold,2:Silver,3:Black|||
+
+Look at the picture for Ring 2
+twirl1: A|B|C|D|E|F|G| -> twirl1: Designer Men's Ring|1||2:Color,1:Size|1:Style 1,2:Style 2,3:Style 3|||
+
+Look at the picture for Bracelet 1
+twirl1: A|B|C|D|E|F|G| -> twirl1: Cool Bracelet||1,2,3|||||This is a cool bracelet|
+
+Look at the picture for Bracelet 2
+twirl1: A|B|C|D|E|F|G| -> twirl1: Quality Men's Bracelet|1|1,2,3,4,5,6|1:Color|1:Black,2:Gold,3:Silver|||
+
+* You can add a "+" to the end of the copied command, so for example: twirl1: Men's Ring|1,2,3,4,5|1|2:Color,1:Size|1:Gold,2:Silver,3:Black|||+ in order to cut an area from the upper left corner of the picture if it has a watermark. To do this, first make sure your zoom level is 100% and you have the desktop cleared of any files. Then, take a selected area picture of the logo. It will save to your Desktop and then all product images will have this logo area changed to a white area.
+
+* At this point you can add items. You can then design your store's theme and your store should be good to go.
+
+
+
+
+

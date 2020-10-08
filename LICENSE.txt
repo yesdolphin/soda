@@ -1,0 +1,7 @@
+Copyright 2020 yesdolphin
+
+Permission is granted free of charge to anybody obtaining a copy of this software and also associated documentation files (the "Software") to deal in the Software without restriction including without limitation the rights to use, and/or copy, and/or modify, and/or merge, and/or publish, and/or distribute, and/or sublicense, and/or sell copies of the Software, and also to permit one or more people to whom the Software is obtained to do so, subject to the following conditions as follows:
+
+The above copyright notice and this permission notice does not have to be included and shall be not required to be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT ANY WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE PROVIDED SOFTWARE.
